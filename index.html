@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinary Clinic Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1> Vet Clinic System By Omnitech Pvt.Ltd</h1>
+    </header>
+    <main>
+      <section id="add-vaccination">
+        <h2>Add Vaccination</h2>
+        <form id="vaccination-form">
+          <label for="pet-name">Pet Name:</label>
+          <input type="text" id="pet-name" placeholder="Enter pet's name" required>
+
+          <label for="owner-name">Owner Name:</label>
+          <input type="text" id="owner-name" placeholder="Enter owner's name" required>
+
+          <label for="owner-contact">Owner Contact:</label>
+          <input type="text" id="owner-contact" placeholder="Enter contact number" required>
+
+          <label for="vaccination-date">Vaccination Date:</label>
+          <input type="date" id="vaccination-date" required>
+
+          <label for="expiry-date">Expiry Date:</label>
+          <input type="date" id="expiry-date" required>
+
+          <label for="vaccination-type">Vaccination Type:</label>
+          <input type="text" id="vaccination-type" placeholder="Enter vaccination type" required>
+
+          <button type="submit">Add Vaccination</button>
+        </form>
+      </section>
+      <section id="view-vaccinations">
+        <h2>View Vaccinations</h2>
+        <input type="text" id="search" placeholder="Search by pet name or owner contact">
+        <table id="vaccination-table">
+          <thead>
+            <tr>
+              <th>Pet Name</th>
+              <th>Owner Name</th>
+              <th>Owner Contact</th>
+              <th>Vaccination Date</th>
+              <th>Expiry Date</th>
+              <th>Vaccination Type</th>
+              <th>Action</th> <!-- Ensure Action column exists -->
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Vaccination data will be inserted here -->
+          </tbody>
+        </table>
+      </section>
+<section id="send-reminders">
+        <h2>Send Reminders</h2>
+        <button id="send-reminders-button">Send Reminder to All</button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Omni tech. All rights reserved.</p>
+    </footer>
+    <script src="renderer.js"></script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "vet-software",
+  "version": "10.0.0",
+  "description": "Vaccination management software for vet clinics",
+  "author": "Developer Pritam Chaulagain, owner of Omnitech Pvt.Ltd",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "form-data": "^4.0.0",
+    "twilio": "^5.2.2"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^23.0.0"
+  },
+  "build": {
+    "appId": "com.omnitech.vetsoftware",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  }
+}
