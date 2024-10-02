@@ -3,8 +3,9 @@ const path = require('path');
 const fs = require('fs').promises;
 const axios = require('axios');
 
-const dataPath = path.join(__dirname, 'data.json');
-const apiKey = '66be4cd1e2f35b9b853f45c53503ec92da94c9951c63319dbf576893fecf497b'; // Replace with your actual API key
+// Use the app’s data folder to store data.json
+const dataPath = path.join(app.getPath('userData'), 'data.json');
+const apiKey = '66be4cd1e2f35b9b853f45c53503ec92da94c9951c63319dbf576893fecf497b';
 
 // Create data.json if it doesn't exist
 async function ensureDataFile() {
@@ -39,14 +40,14 @@ async function checkExpiryDates() {
     if (vaccine.expiryDate === today && !vaccine.reminderSent) {
       const message = `Reminder: Your pet ${vaccine.petName}'s ${vaccine.vaccinationType} vaccination has expired. Please visit the bardibas vet clinic and pet shops.`;
       await sendSMS(vaccine.ownerContact, message);
-      vaccine.reminderSent = true; // Mark the reminder as sent
+      vaccine.reminderSent = true;
       dataChanged = true;
       remindersSentToday++;
     }
   }
 
   if (dataChanged) {
-    await fs.writeFile(dataPath, JSON.stringify(data, null, 2)); // Save changes to file
+    await fs.writeFile(dataPath, JSON.stringify(data, null, 2));
   }
 
   return remindersSentToday;
